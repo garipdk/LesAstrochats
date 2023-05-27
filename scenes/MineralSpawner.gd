@@ -17,13 +17,14 @@ func _spawnMineral():
 	
 	var mineral = preload("res://scenes/Mineral.tscn")
 	var newMineral = mineral.instantiate()
+	newMineral._initMineral(isBig)
 	add_child(newMineral)
 	
 	var numberOfNodes = get_node("SpawnPosList").get_child_count()
 	var randomSpawner = get_node("SpawnPosList/SpawnPos" + str(int(randf() * numberOfNodes)))
 	
 	print("SpawnPosList" + str(int(randf() * numberOfNodes)))
-	print(randomSpawner)
+	newMineral.position = randomSpawner.position;
 	
 	#newMineral.position = randomSpawner.position
 

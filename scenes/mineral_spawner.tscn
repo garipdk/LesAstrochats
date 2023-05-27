@@ -28,6 +28,9 @@ position = Vector2(968, 661)
 position = Vector2(2144, 628)
 
 [node name="SpawnPos1" type="Node2D" parent="SpawnPosList"]
-position = Vector2(819, 276)
+position = Vector2(819, 271)
+
+[node name="SpawnPos0" type="Node2D" parent="SpawnPosList"]
+position = Vector2(1638, 552)
 
 [connection signal="timeout" from="Timer" to="." method="_onTimeOut"]

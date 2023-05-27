@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dnpeytuex6vpq" path="res://scenes/Chat.tscn" id="1_vqfb0"]
 [ext_resource type="PackedScene" uid="uid://bo1pmwwdxcddq" path="res://scenes/mineral.tscn" id="2_2chbu"]
-[ext_resource type="PackedScene" path="res://scenes/mineral_spawner.tscn" id="3_dqtu1"]
+[ext_resource type="PackedScene" uid="uid://bl0b2h74s514u" path="res://scenes/mineral_spawner.tscn" id="3_dqtu1"]
 
 [node name="Node2D" type="Node2D"]
 
