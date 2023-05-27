@@ -1,16 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmke46xnsixf0"]
+[gd_scene load_steps=2 format=3 uid="uid://bmke46xnsixf0"]
 
-[ext_resource type="Script" path="res://scripts/Drag_and_drop.gd" id="1_gb28n"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qwm3t"]
-radius = 90.84
+[ext_resource type="PackedScene" uid="uid://dm3vuqxm3olws" path="res://scenes/Chat.tscn" id="1_vqfb0"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(172, 140)
-input_pickable = true
-script = ExtResource("1_gb28n")
+[node name="Chat1" parent="." instance=ExtResource("1_vqfb0")]
+position = Vector2(880, 106)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_qwm3t")
+[node name="Chat2" parent="." instance=ExtResource("1_vqfb0")]
+position = Vector2(144, 166)
+
+[node name="Chat3" parent="." instance=ExtResource("1_vqfb0")]
+position = Vector2(161, 361)
+
+[node name="Chat4" parent="." instance=ExtResource("1_vqfb0")]
+position = Vector2(656, 240)
+
+[node name="Chat5" parent="." instance=ExtResource("1_vqfb0")]
+position = Vector2(422, 175)

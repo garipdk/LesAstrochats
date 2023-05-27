@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnpeytuex6vpq"]
+
+[ext_resource type="Script" path="res://scripts/Chat.gd" id="1_22xco"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwm3t"]
+radius = 90.84
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_22xco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qwm3t")
