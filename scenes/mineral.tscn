@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo1pmwwdxcddq"]
+
+[ext_resource type="Script" path="res://scenes/Mineral.gd" id="1_jb1x4"]
+[ext_resource type="Texture2D" uid="uid://c06idwrd304fs" path="res://scenes/mineral.png" id="2_cg7l2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8t1st"]
+radius = 38.0526
+
+[node name="Mineral" type="RigidBody2D"]
+script = ExtResource("1_jb1x4")
+
+[node name="Mineral2" type="Sprite2D" parent="."]
+texture = ExtResource("2_cg7l2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8t1st")
