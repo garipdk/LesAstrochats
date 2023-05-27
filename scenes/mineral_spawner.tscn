@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl0b2h74s514u"]
+
+[ext_resource type="Script" path="res://scenes/MineralSpawner.gd" id="1_0snck"]
+
+[node name="MineralSpawner" type="Node2D"]
+script = ExtResource("1_0snck")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(931, 259)
+polygon = PackedVector2Array(-210, -50, 589, -77, 1372, -45, 1520, 487, 349, 514, -359, 433)
+
+[node name="SpawnPosList" type="ItemList" parent="Area2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+item_count = 1
+item_0/text = ""
+metadata/_edit_use_anchors_ = true
+
+[node name="SpawnPos5" type="Node2D" parent="Area2D/SpawnPosList"]
+position = Vector2(2159, 324)
+
+[node name="SpawnPos4" type="Node2D" parent="Area2D/SpawnPosList"]
+position = Vector2(1503, 519)
+
+[node name="SpawnPos3" type="Node2D" parent="Area2D/SpawnPosList"]
+position = Vector2(968, 661)
+
+[node name="SpawnPos2" type="Node2D" parent="Area2D/SpawnPosList"]
+position = Vector2(2144, 628)
+
+[node name="SpawnPos1" type="Node2D" parent="Area2D/SpawnPosList"]
+position = Vector2(819, 276)
+
+[connection signal="timeout" from="Timer" to="." method="_onTimeOut"]

@@ -27,9 +27,10 @@ func on_entered_mineral(body):
 	current_mineral = body
 
 func _on_timer_timeout():
-	if current_mineral:
+	if current_mineral != null:
 		$Energy.value-=1
-		current_mineral.giveDamage(atack_points)
+		if $Energy.value > 0:
+			current_mineral.giveDamage(atack_points)
 	pass # Replace with function body.
 
 
