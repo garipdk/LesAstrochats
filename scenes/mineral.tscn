@@ -1,20 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo1pmwwdxcddq"]
+[gd_scene load_steps=7 format=3 uid="uid://bo1pmwwdxcddq"]
 
 [ext_resource type="Script" path="res://scenes/Mineral.gd" id="1_jb1x4"]
 [ext_resource type="Texture2D" uid="uid://c06idwrd304fs" path="res://scenes/mineral.png" id="2_cg7l2"]
 [ext_resource type="Script" path="res://scenes/HealthBar.gd" id="3_llma6"]
+[ext_resource type="Texture2D" uid="uid://dd4wmdcq2q11b" path="res://assets/bigMineral.png" id="3_xugd4"]
 [ext_resource type="Texture2D" uid="uid://d0qiwsr8d4av3" path="res://assets/healthBar.png" id="3_yc8b5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8t1st"]
-radius = 38.0526
+radius = 69.1809
 
 [node name="Mineral" type="Area2D"]
 script = ExtResource("1_jb1x4")
 
-[node name="Mineral2" type="Sprite2D" parent="."]
+[node name="SmallMineral" type="Sprite2D" parent="."]
 texture = ExtResource("2_cg7l2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionSmall" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8t1st")
+
+[node name="BigMineral" type="Sprite2D" parent="."]
+position = Vector2(1, -29)
+texture = ExtResource("3_xugd4")
+
+[node name="CollisionBig" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8t1st")
 
 [node name="HealthBar" type="Node2D" parent="."]
@@ -30,3 +38,5 @@ position = Vector2(0, -50)
 [node name="Rect" type="Sprite2D" parent="HealthBar/Anchor/Bar"]
 position = Vector2(23, 0)
 texture = ExtResource("3_yc8b5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

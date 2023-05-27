@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4iplhk8ho3rp"
-path="res://.godot/imported/mineral.png-e49cce404ff94c8bdfc9546f26e4ce01.ctex"
+path="res://.godot/imported/smallMineral.png-44d439cd107ff864380e30a739338789.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mineral.png"
-dest_files=["res://.godot/imported/mineral.png-e49cce404ff94c8bdfc9546f26e4ce01.ctex"]
+source_file="res://assets/smallMineral.png"
+dest_files=["res://.godot/imported/smallMineral.png-44d439cd107ff864380e30a739338789.ctex"]
 
 [params]
 
