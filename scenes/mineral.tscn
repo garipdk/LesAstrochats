@@ -40,3 +40,4 @@ position = Vector2(23, 0)
 texture = ExtResource("3_yc8b5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
