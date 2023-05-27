@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Les Astrochats"
+run/main_scene="res://scenes/Meteorite.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
