@@ -26,8 +26,11 @@ func _process(_delta):
 func on_entered_mineral(body):
 	current_mineral = body
 
+func on_exited_mineral(_body):
+	current_mineral = null
+	
 func _on_timer_timeout():
-	if current_mineral != null:
+	if current_mineral != null and not is_draged:
 		$Energy.value-=1
 		if $Energy.value > 0:
 			current_mineral.giveDamage(atack_points)
