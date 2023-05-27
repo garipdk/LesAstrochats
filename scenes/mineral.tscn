@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo1pmwwdxcddq"]
+[gd_scene load_steps=6 format=3 uid="uid://dy3byms0x7got"]
 
 [ext_resource type="Script" path="res://scenes/Mineral.gd" id="1_jb1x4"]
 [ext_resource type="Texture2D" uid="uid://c06idwrd304fs" path="res://scenes/mineral.png" id="2_cg7l2"]
