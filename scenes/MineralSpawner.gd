@@ -19,9 +19,11 @@ func _spawnMineral():
 	var newMineral = mineral.instantiate()
 	add_child(newMineral)
 	
-	#var numberOfNodes = get_node("Area2D/SpawnPosList").get_child_count()
-	#var randomSpawner = get_node("Area2D/ItemList/SpawnPos" + str(int(randf() * numberOfNodes)))
+	var numberOfNodes = get_node("SpawnPosList").get_child_count()
+	var randomSpawner = get_node("SpawnPosList/SpawnPos" + str(int(randf() * numberOfNodes)))
 	
+	print("SpawnPosList" + str(int(randf() * numberOfNodes)))
+	print(randomSpawner)
 	
 	#newMineral.position = randomSpawner.position
 
