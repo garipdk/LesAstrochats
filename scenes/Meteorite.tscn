@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bl0b2h74s514u" path="res://scenes/mineral_spawner.tscn" id="3_dqtu1"]
 [ext_resource type="PackedScene" uid="uid://d0t4bvwv0dddx" path="res://scenes/SleepZone.tscn" id="3_ly1jv"]
 [ext_resource type="PackedScene" uid="uid://bg353mxlcht2v" path="res://scenes/RocketFillMeter.tscn" id="4_xj21c"]
-[ext_resource type="PackedScene" uid="uid://olb6kfb8gtkc" path="res://scenes/rocket.tscn" id="5_yi6e4"]
+[ext_resource type="PackedScene" uid="uid://coovf7h24lafi" path="res://scenes/rocket.tscn" id="5_yi6e4"]
 [ext_resource type="PackedScene" uid="uid://grjcajqidqlp" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
 
 [node name="Node2D" type="Node2D"]
@@ -23,7 +23,7 @@ centered = false
 position = Vector2(1, 0)
 
 [node name="Rocket" parent="." instance=ExtResource("5_yi6e4")]
-position = Vector2(887, 119)
+position = Vector2(791, 320)
 
 [node name="SleepZone" parent="." groups=["SleepZone"] instance=ExtResource("3_ly1jv")]
 position = Vector2(704, 376)
