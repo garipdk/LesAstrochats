@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp4algmag4icr"]
+
+[ext_resource type="Script" path="res://scripts/Intro.gd" id="1_4fknh"]
+[ext_resource type="Texture2D" uid="uid://sawn83ofcmte" path="res://assets/introduction.png" id="2_7wk3r"]
+[ext_resource type="Texture2D" uid="uid://cl36ubhfvji15" path="res://assets/Boutons/bouton_jouer.png" id="3_n2ylt"]
+[ext_resource type="Texture2D" uid="uid://b00p03a34nk1" path="res://assets/Boutons/bouton_jouer_light.png" id="4_nciak"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4fknh")
+
+[node name="Img0217" type="Sprite2D" parent="."]
+position = Vector2(-73, -34)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("2_7wk3r")
+centered = false
+
+[node name="Button" type="TextureButton" parent="."]
+offset_left = 706.0
+offset_top = 672.0
+offset_right = 1218.0
+offset_bottom = 1184.0
+texture_normal = ExtResource("3_n2ylt")
+texture_pressed = ExtResource("4_nciak")
+texture_hover = ExtResource("4_nciak")
+texture_disabled = ExtResource("3_n2ylt")
+texture_focused = ExtResource("4_nciak")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

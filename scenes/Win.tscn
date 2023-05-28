@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cigq5pmbgcyww"]
+[gd_scene load_steps=6 format=3 uid="uid://cigq5pmbgcyww"]
 
 [ext_resource type="Script" path="res://scripts/GoBackToMenu.gd" id="1_cx0x3"]
 [ext_resource type="Texture2D" uid="uid://b4oip5povua3f" path="res://assets/background_flou.png" id="2_ply1m"]
 [ext_resource type="Texture2D" uid="uid://bl65su3yl72ue" path="res://assets/win.jpeg" id="2_s57xr"]
+[ext_resource type="Texture2D" uid="uid://copyo5mqkk2ic" path="res://assets/Boutons/bouton_menu.png" id="4_wxso8"]
+[ext_resource type="Texture2D" uid="uid://6apyuxr553yd" path="res://assets/Boutons/bouton_menu_light.png" id="5_mxmil"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_cx0x3")
@@ -39,12 +41,15 @@ theme_override_font_sizes/mono_font_size = 100
 text = "YOU WIN !!!"
 fit_content = true
 
-[node name="Button" type="Button" parent="."]
-offset_left = 700.0
-offset_top = 825.0
-offset_right = 1261.0
-offset_bottom = 945.0
-theme_override_font_sizes/font_size = 50
-text = "Menu"
+[node name="Button" type="TextureButton" parent="."]
+offset_left = 765.0
+offset_top = 661.0
+offset_right = 1277.0
+offset_bottom = 1173.0
+texture_normal = ExtResource("4_wxso8")
+texture_pressed = ExtResource("5_mxmil")
+texture_hover = ExtResource("5_mxmil")
+texture_disabled = ExtResource("4_wxso8")
+texture_focused = ExtResource("5_mxmil")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/Meteorite.tscn")
+	get_tree().change_scene_to_file("res://scenes/Intro.tscn")
 	pass # Replace with function body.
 
 
@@ -24,3 +24,5 @@ func _on_credit_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 	pass # Replace with function body.
+
+

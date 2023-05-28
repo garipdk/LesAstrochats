@@ -10,24 +10,23 @@
 script = ExtResource("1_yoaqk")
 
 [node name="Rocket1" type="Sprite2D" parent="."]
-position = Vector2(-1, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_w1vvj")
 
 [node name="Rocket2" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(18, 2)
+position = Vector2(-1, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_jw58f")
 
 [node name="Rocket3" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(22, -5)
+position = Vector2(3, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_cfmy4")
 
 [node name="Rocket4" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(5, -9)
+position = Vector2(1, -9)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_i6stq")
