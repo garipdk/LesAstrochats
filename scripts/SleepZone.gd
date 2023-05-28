@@ -9,3 +9,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_body_entered(body):
+	if body.is_in_group("Chats"):
+		body.on_sleepzone_entered(self)
+	pass # Replace with function body.
+
+
+func _on_body_exited(body):
+	if body.is_in_group("Chats"):
+		body.on_sleepzone_exited(self)
+	pass # Replace with function body.
