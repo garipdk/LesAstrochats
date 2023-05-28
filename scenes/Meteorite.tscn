@@ -1,23 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmke46xnsixf0"]
+[gd_scene load_steps=7 format=3 uid="uid://bmke46xnsixf0"]
 
 [ext_resource type="Texture2D" uid="uid://rq0cfi5mhsvk" path="res://assets/IMG_0217.PNG" id="1_gmydq"]
 [ext_resource type="PackedScene" uid="uid://dnpeytuex6vpq" path="res://scenes/Chat.tscn" id="1_vqfb0"]
 [ext_resource type="PackedScene" uid="uid://bl0b2h74s514u" path="res://scenes/mineral_spawner.tscn" id="3_dqtu1"]
 [ext_resource type="PackedScene" uid="uid://ciyj5b2o2w7qr" path="res://scenes/SleepZone.tscn" id="3_ly1jv"]
 [ext_resource type="PackedScene" uid="uid://bg353mxlcht2v" path="res://scenes/RocketFillMeter.tscn" id="4_xj21c"]
-[ext_resource type="PackedScene" uid="uid://coovf7h24lafi" path="res://scenes/rocket.tscn" id="5_yi6e4"]
+[ext_resource type="PackedScene" path="res://scenes/rocket.tscn" id="5_yi6e4"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Img0217" type="Sprite2D" parent="."]
-scale = Vector2(0.784634, 0.71952)
+position = Vector2(-73, -34)
+scale = Vector2(0.85, 0.85)
 texture = ExtResource("1_gmydq")
 centered = false
 
 [node name="MineralSpawner" parent="." instance=ExtResource("3_dqtu1")]
 position = Vector2(1, 0)
-initHealthSmall = 1
-initHealthBig = 50
 
 [node name="Rocket" parent="." instance=ExtResource("5_yi6e4")]
 position = Vector2(569, 282)
