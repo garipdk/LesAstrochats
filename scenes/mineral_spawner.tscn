@@ -1,14 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://bl0b2h74s514u"]
 
-[ext_resource type="Script" path="res://scenes/MineralSpawner.gd" id="1_0snck"]
+[ext_resource type="Script" path="res://scripts/MineralSpawner.gd" id="1_x1ybn"]
 
 [node name="MineralSpawner" type="Node2D"]
-script = ExtResource("1_0snck")
+script = ExtResource("1_x1ybn")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="SpawnPosList" type="ItemList" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 item_count = 1

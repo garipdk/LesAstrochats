@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciyj5b2o2w7qr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_17cgk"]
+radius = 51.0
+height = 216.0
+
+[node name="SleepZone" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_17cgk")

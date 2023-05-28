@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bo1pmwwdxcddq"]
 
-[ext_resource type="Script" path="res://scenes/Mineral.gd" id="1_jb1x4"]
-[ext_resource type="Texture2D" uid="uid://c06idwrd304fs" path="res://scenes/mineral.png" id="2_cg7l2"]
-[ext_resource type="Script" path="res://scenes/HealthBar.gd" id="3_llma6"]
+[ext_resource type="Script" path="res://scripts/Mineral.gd" id="1_jb1x4"]
+[ext_resource type="Texture2D" uid="uid://c06idwrd304fs" path="res://assets/mineral.png" id="2_cg7l2"]
+[ext_resource type="Script" path="res://scripts/HealthBar.gd" id="3_llma6"]
 [ext_resource type="Texture2D" uid="uid://dd4wmdcq2q11b" path="res://assets/bigMineral.png" id="3_xugd4"]
 [ext_resource type="Texture2D" uid="uid://d0qiwsr8d4av3" path="res://assets/healthBar.png" id="3_yc8b5"]
 
