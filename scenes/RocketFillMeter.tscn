@@ -26,3 +26,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "999/999"
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+autostart = true
+
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
