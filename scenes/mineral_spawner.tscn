@@ -16,18 +16,24 @@ item_0/text = ""
 metadata/_edit_use_anchors_ = true
 
 [node name="SpawnPos5" type="Node2D" parent="SpawnPosList"]
-position = Vector2(2159, 324)
+position = Vector2(811, 195)
 
 [node name="SpawnPos4" type="Node2D" parent="SpawnPosList"]
-position = Vector2(1503, 519)
+position = Vector2(499, 209)
 
 [node name="SpawnPos3" type="Node2D" parent="SpawnPosList"]
-position = Vector2(968, 661)
+position = Vector2(134, 457)
 
 [node name="SpawnPos2" type="Node2D" parent="SpawnPosList"]
-position = Vector2(2144, 628)
+position = Vector2(796, 499)
 
 [node name="SpawnPos1" type="Node2D" parent="SpawnPosList"]
-position = Vector2(819, 276)
+position = Vector2(124, 169)
 
+[node name="SpawnPos0" type="Node2D" parent="SpawnPosList"]
+position = Vector2(502, 454)
+
+[node name="Minerals" type="Node" parent="."]
+
+[connection signal="ready" from="Timer" to="." method="_on_timer_ready"]
 [connection signal="timeout" from="Timer" to="." method="_onTimeOut"]

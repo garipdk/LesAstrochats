@@ -5,7 +5,7 @@ var initHealth = 100.0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	add_to_group("Minerals")
 	pass # Replace with function boy.
 	
 func _initMineral(isSmall:bool):
