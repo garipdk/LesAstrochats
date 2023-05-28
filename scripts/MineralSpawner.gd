@@ -39,8 +39,8 @@ func _spawnMineral():
 			
 			var newMineral = mineral.instantiate()
 			
-			print(newMineral)
-			print(mineral)
+			#print(newMineral)
+			#print(mineral)
 			
 			if isSmall:
 				newMineral.initMineral(true, initHealthSmall, mineralRewardSmall)

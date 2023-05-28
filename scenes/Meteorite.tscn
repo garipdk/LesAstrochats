@@ -32,7 +32,7 @@ position = Vector2(704, 376)
 z_index = 100
 position = Vector2(875, 400)
 atack_points = 5.0
-recuperation_per_second = 10.0
+recuperation_per_second = 2.0
 
 [node name="Chat2" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 z_index = 100

@@ -23,8 +23,11 @@ var is_sleeping = false
 var current_mineral = null
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
-		can_grab = event.pressed
-		grabbed_offset = position - get_global_mouse_position()
+		if Global.chat_draged == null:
+			Global.chat_draged = self
+		if Global.chat_draged == self:
+			can_grab = event.pressed
+			grabbed_offset = position - get_global_mouse_position()
 	
 
 
@@ -32,13 +35,14 @@ func _process(_delta):
 	$Lightning.visible = $Energy.value <= 0
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_grab:
-		position = get_global_mouse_position() + grabbed_offset
-		
-		if is_draged == false:
-			pick_up_pos = position
-		
-		is_draged = true
-		etat = STATES.DRAG
+		if Global.chat_draged == self:
+			position = get_global_mouse_position() + grabbed_offset
+			
+			if is_draged == false:
+				pick_up_pos = position
+			
+			is_draged = true
+			etat = STATES.DRAG
 	else:
 		if current_mineral != null:
 			etat = STATES.MINE
@@ -48,12 +52,13 @@ func _process(_delta):
 			etat = STATES.SLEEP
 		else:
 			etat = STATES.IDLE
-			
-		if is_draged == true && can_be_dropped == false:
-			position = pick_up_pos
-			can_be_dropped = true
-				
+		if Global.chat_draged == self:			
+			if is_draged == true && can_be_dropped == false:
+				position = pick_up_pos
+				can_be_dropped = true
+			Global.chat_draged = null
 		is_draged = false
+	
 	# move_and_slide()
 	
 func on_entered_playzone():

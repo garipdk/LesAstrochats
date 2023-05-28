@@ -3,6 +3,7 @@ var chat_sleeping:bool = false
 var score: int = 0
 var scoreToWin: int = 100
 
+var chat_draged:CharacterBody2D = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
