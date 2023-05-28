@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl0b2h74s514u"]
+[gd_scene load_steps=3 format=3 uid="uid://bl0b2h74s514u"]
 
 [ext_resource type="Script" path="res://scripts/MineralSpawner.gd" id="1_x1ybn"]
+[ext_resource type="Texture2D" uid="uid://rq0cfi5mhsvk" path="res://assets/IMG_0217.PNG" id="2_7q66m"]
 
 [node name="MineralSpawner" type="Node2D"]
 script = ExtResource("1_x1ybn")
+
+[node name="Img0217" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.784634, 0.71952)
+texture = ExtResource("2_7q66m")
+centered = false
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="SpawnPosList" type="ItemList" parent="."]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 item_count = 1

@@ -1,6 +1,8 @@
 extends Node2D
 
 var initHealth = 100.0;
+var _isSmall:bool = false
+
 @export var health:float = 100.0
 
 # Called when the node enters the scene tree for the first time.
@@ -9,6 +11,8 @@ func _ready():
 	pass # Replace with function boy.
 	
 func _initMineral(isSmall:bool):
+	_isSmall = isSmall
+	
 	if isSmall:
 		initHealth = 100
 		get_node("BigMineral").queue_free()
@@ -38,7 +42,13 @@ func _process(delta):
 
 
 func _destroy():
+	if _isSmall:
+		Global.score += 1
+	else:
+		Global.score += 3
+	
 	queue_free()
+	
 	pass
 
 

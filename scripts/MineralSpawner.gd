@@ -27,8 +27,9 @@ func _spawnMineral():
 			random.randomize()
 			var isBig:bool = randf() > .5
 			
-			var mineral = preload("res://scenes/Mineral.tscn")
+			var mineral = load("res://scenes/Mineral.tscn")
 			var newMineral = mineral.instantiate()
+			
 			newMineral._initMineral(isBig)
 			
 			var randomSpawner = get_node("SpawnPosList/SpawnPos" + str(nodeNumber))
