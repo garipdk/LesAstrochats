@@ -3,6 +3,12 @@ extends Node2D
 @export var spawnTimer:float = 1.0
 @export var maxNumberOfMineral:int = 3
 
+@export var initHealthSmall = 100
+@export var initHealthBig = 60
+
+@export var mineralRewardSmall = 5
+@export var mineralRewardBig = 20
+
 var numberOfMinerals:int = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -25,12 +31,15 @@ func _spawnMineral():
 		
 			var random = RandomNumberGenerator.new()
 			random.randomize()
-			var isBig:bool = randf() > .5
+			var isSmall:bool = randf() <= .5
 			
 			var mineral = load("res://scenes/Mineral.tscn")
 			var newMineral = mineral.instantiate()
 			
-			newMineral._initMineral(isBig)
+			if isSmall:
+				newMineral._initMineral(true, initHealthSmall, mineralRewardSmall)
+			else:
+				newMineral._initMineral(false, initHealthBig, mineralRewardBig)
 			
 			var randomSpawner = get_node("SpawnPosList/SpawnPos" + str(nodeNumber))
 			

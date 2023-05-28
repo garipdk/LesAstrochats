@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://coovf7h24lafi"]
+
+[ext_resource type="Texture2D" uid="uid://bfm10xtns15ki" path="res://assets/Rocket/rocket1.png" id="1_w1vvj"]
+[ext_resource type="Script" path="res://scripts/Rocket.gd" id="1_yoaqk"]
+[ext_resource type="Texture2D" uid="uid://g8v5u4j4a2lt" path="res://assets/Rocket/rocket2.png" id="2_jw58f"]
+[ext_resource type="Texture2D" uid="uid://blq5k53uby47u" path="res://assets/Rocket/rocket3.png" id="3_cfmy4"]
+[ext_resource type="Texture2D" uid="uid://d3p4cldx60i4" path="res://assets/Rocket/rocket4.png" id="4_i6stq"]
+
+[node name="Rocket" type="Node2D"]
+script = ExtResource("1_yoaqk")
+
+[node name="Rocket1" type="Sprite2D" parent="."]
+texture = ExtResource("1_w1vvj")
+
+[node name="Rocket2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -1)
+texture = ExtResource("2_jw58f")
+
+[node name="Rocket3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(3, -1)
+texture = ExtResource("3_cfmy4")
+
+[node name="Rocket4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -9)
+texture = ExtResource("4_i6stq")
