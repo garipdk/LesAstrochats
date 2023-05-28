@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmke46xnsixf0"]
+[gd_scene load_steps=10 format=3 uid="uid://bmke46xnsixf0"]
 
+[ext_resource type="Script" path="res://scripts/Meteorite.gd" id="1_4cku0"]
 [ext_resource type="Texture2D" uid="uid://rq0cfi5mhsvk" path="res://assets/IMG_0217.PNG" id="1_gmydq"]
 [ext_resource type="PackedScene" uid="uid://dnpeytuex6vpq" path="res://scenes/Chat.tscn" id="1_vqfb0"]
 [ext_resource type="PackedScene" uid="uid://dmsu8ab71r074" path="res://scenes/playzone.tscn" id="2_gf1te"]
@@ -10,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://grjcajqidqlp" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_4cku0")
+scoreToWin = 5
 
 [node name="Img0217" type="Sprite2D" parent="."]
 position = Vector2(-73, -34)
@@ -58,3 +61,4 @@ scale = Vector2(1.687, 1.687)
 
 [node name="TimerToEnd" parent="." instance=ExtResource("8_ib4tx")]
 position = Vector2(832, 982)
+_fillMax = 5
