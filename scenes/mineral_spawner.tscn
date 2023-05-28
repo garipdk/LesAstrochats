@@ -33,4 +33,7 @@ position = Vector2(124, 169)
 [node name="SpawnPos0" type="Node2D" parent="SpawnPosList"]
 position = Vector2(502, 454)
 
+[node name="Minerals" type="Node" parent="."]
+
+[connection signal="ready" from="Timer" to="." method="_on_timer_ready"]
 [connection signal="timeout" from="Timer" to="." method="_onTimeOut"]
