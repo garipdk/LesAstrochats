@@ -23,7 +23,7 @@ centered = false
 position = Vector2(1, 0)
 
 [node name="Rocket" parent="." instance=ExtResource("5_yi6e4")]
-position = Vector2(887, 119)
+position = Vector2(791, 320)
 
 [node name="SleepZone" parent="." groups=["SleepZone"] instance=ExtResource("3_ly1jv")]
 position = Vector2(704, 376)

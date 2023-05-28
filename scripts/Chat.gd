@@ -29,6 +29,7 @@ func _input_event(_viewport, event, _shape_idx):
 
 
 func _process(_delta):
+	$Lightning.visible = $Energy.value <= 0
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_grab:
 		position = get_global_mouse_position() + grabbed_offset
@@ -55,14 +56,9 @@ func _process(_delta):
 		is_draged = false
 	# move_and_slide()
 	
-func update_state():
-	
-	pass
-	
 func on_entered_playzone():
 	if etat == STATES.DRAG:
 		can_be_dropped = true
-		update_state()
 		pass
 	pass
 	
@@ -71,7 +67,6 @@ func on_entered_playzone():
 func on_exited_playzone():
 	if etat == STATES.DRAG:
 		can_be_dropped = false
-		update_state()
 		pass
 	pass
 
@@ -92,7 +87,7 @@ func _on_timer_timeout():
 		STATES.MINE:
 			if $Energy.value > 0.:
 				current_mineral.giveDamage(atack_points)
-			$Energy.value -= .1
+			$Energy.value -= .5
 		STATES.SLEEP:
 			if bed_pos != null:
 				position = bed_pos

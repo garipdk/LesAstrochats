@@ -1,7 +1,7 @@
 extends Node
 var chat_sleeping:bool = false
 var score: int = 0
-var scoreToWin: int = 1000
+var scoreToWin: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
