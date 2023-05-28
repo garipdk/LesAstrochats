@@ -11,22 +11,26 @@ func _process(delta):
 	pass
 	
 func _spawnMineral():
-	var random = RandomNumberGenerator.new()
-	random.randomize()
-	var isBig:bool = randf() > .5
 	
-	var mineral = preload("res://scenes/Mineral.tscn")
-	var newMineral = mineral.instantiate()
-	newMineral._initMineral(isBig)
-	add_child(newMineral)
+	var numberOfNodes = get_node("SpawnPosList").get_child_count()	
+	var nodeNumber = int(randf() * numberOfNodes)
 	
-	var numberOfNodes = get_node("SpawnPosList").get_child_count()
-	var randomSpawner = get_node("SpawnPosList/SpawnPos" + str(int(randf() * numberOfNodes)))
+	if get_node("Mineral" + str(nodeNumber)) == null :
 	
-	print("SpawnPosList" + str(int(randf() * numberOfNodes)))
-	newMineral.position = randomSpawner.position;
-	
-	#newMineral.position = randomSpawner.position
+		var random = RandomNumberGenerator.new()
+		random.randomize()
+		var isBig:bool = randf() > .5
+		
+		var mineral = preload("res://scenes/Mineral.tscn")
+		var newMineral = mineral.instantiate()
+		newMineral._initMineral(isBig)
+		add_child(newMineral)
+		
+		var randomSpawner = get_node("SpawnPosList/SpawnPos" + str(nodeNumber))
+		
+		
+		newMineral.position = randomSpawner.position;
+		newMineral.name = "Mineral" + str(nodeNumber)
 
 func _onTimeOut():
 	_spawnMineral()
