@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bg353mxlcht2v"]
+
+[node name="ProgressBar" type="ProgressBar"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 927.0
+offset_bottom = 43.0
+grow_horizontal = 2
+show_percentage = false
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_right = 638.0
+offset_bottom = 100.0
+text = "999/999
+"
+editable = false
