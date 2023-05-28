@@ -13,7 +13,9 @@ enum STATES {
 }
 var etat: STATES = STATES.IDLE
 
+var pick_up_pos:Vector2
 var can_grab = false
+var can_be_dropped = true
 var grabbed_offset = Vector2()
 var is_draged = false
 var is_sleeping = false
@@ -26,8 +28,13 @@ func _input_event(_viewport, event, _shape_idx):
 
 
 func _process(_delta):
+	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_grab:
 		position = get_global_mouse_position() + grabbed_offset
+		
+		if is_draged == false:
+			pick_up_pos = position
+		
 		is_draged = true
 		etat = STATES.DRAG
 	else:
@@ -39,8 +46,33 @@ func _process(_delta):
 			etat = STATES.SLEEP
 		else:
 			etat = STATES.IDLE
+			
+		if is_draged == true && can_be_dropped == false:
+			position = pick_up_pos
+			can_be_dropped = true
+				
 		is_draged = false
 	# move_and_slide()
+	
+func update_state():
+	
+	pass
+	
+func on_entered_playzone():
+	if etat == STATES.DRAG:
+		can_be_dropped = true
+		update_state()
+		pass
+	pass
+	
+	
+	
+func on_exited_playzone():
+	if etat == STATES.DRAG:
+		can_be_dropped = false
+		update_state()
+		pass
+	pass
 
 func on_entered_mineral(body):
 	current_mineral = body

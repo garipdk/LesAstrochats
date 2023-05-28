@@ -13,7 +13,7 @@ func _ready():
 	add_to_group("Minerals")
 	pass # Replace with function boy.
 	
-func _initMineral(isSmall:bool, instanceInitHealth:float, reward: int):
+func initMineral(isSmall:bool, instanceInitHealth:float, reward: int):
 	_isSmall = isSmall
 	
 	if isSmall:
@@ -57,12 +57,13 @@ func _destroy():
 func _on_body_entered(body):
 	if body.is_in_group("Chats"):
 		body.on_entered_mineral(self)
-		
+		pass
 	pass # Replace with function body.
 
 
 func _on_body_exited(body):
 	if body.is_in_group("Chats"):
 		body.on_exited_mineral(self)
-		
+		pass	
 	pass # Replace with function body.
+	

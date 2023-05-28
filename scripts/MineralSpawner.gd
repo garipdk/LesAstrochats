@@ -11,6 +11,8 @@ extends Node2D
 
 var numberOfMinerals:int = 0
 
+var mineral = preload("res://scenes/Mineral.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -22,24 +24,28 @@ func _process(delta):
 	
 func _spawnMineral():
 	
+	
 	var numberOfNodes = get_node("SpawnPosList").get_child_count()	
 	var nodeNumber = int(randf() * numberOfNodes)
 	
 	if $Minerals.get_child_count() < maxNumberOfMineral:
 	
-		if get_node("Minerals/Mineral" + str(nodeNumber)) == null :
+		if get_node_or_null("Minerals/Mineral" + str(nodeNumber)) == null :
 		
 			var random = RandomNumberGenerator.new()
 			random.randomize()
 			var isSmall:bool = randf() <= .5
 			
-			var mineral = load("res://scenes/Mineral.tscn")
+			
 			var newMineral = mineral.instantiate()
 			
+			print(newMineral)
+			print(mineral)
+			
 			if isSmall:
-				newMineral._initMineral(true, initHealthSmall, mineralRewardSmall)
+				newMineral.initMineral(true, initHealthSmall, mineralRewardSmall)
 			else:
-				newMineral._initMineral(false, initHealthBig, mineralRewardBig)
+				newMineral.initMineral(false, initHealthBig, mineralRewardBig)
 			
 			var randomSpawner = get_node("SpawnPosList/SpawnPos" + str(nodeNumber))
 			
