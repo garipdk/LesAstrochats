@@ -1,7 +1,5 @@
 extends Node
 
-var _fillMax:int = 50
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_updateState()
@@ -14,9 +12,9 @@ func _process(delta):
 	pass
 
 func _updateState():
-	var scoreVal = clamp(Global.score, 0, _fillMax)
-	$ProgressBar.value = float(scoreVal) / float(_fillMax) * 100
-	$ProgressBar/RichTextLabel.text = str(scoreVal) + "/" + str(_fillMax)
+	var scoreVal = clamp(Global.score, 0, Global.scoreToWin)
+	$ProgressBar.value = float(scoreVal) / float(Global.scoreToWin) * 100
+	$ProgressBar/RichTextLabel.text = str(scoreVal) + "/" + str(Global.scoreToWin)
 	pass
 
 
