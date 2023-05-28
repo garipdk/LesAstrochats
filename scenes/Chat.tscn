@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnpeytuex6vpq"]
+[gd_scene load_steps=4 format=3 uid="uid://dnpeytuex6vpq"]
 
 [ext_resource type="Script" path="res://scripts/Chat.gd" id="1_22xco"]
+[ext_resource type="Texture2D" uid="uid://dtu7qgbtqccim" path="res://assets/Chat.png" id="2_d4y7m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwm3t"]
-radius = 90.84
+radius = 58.2151
 
 [node name="Chat" type="CharacterBody2D"]
 input_pickable = true
@@ -20,6 +21,9 @@ offset_bottom = -109.0
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Chat" type="Sprite2D" parent="."]
+texture = ExtResource("2_d4y7m")
 
 [connection signal="ready" from="Energy" to="." method="_on_energy_ready"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
