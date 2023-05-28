@@ -11,6 +11,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	_updateState()
+	if Global.score >= _fillMax:
+		get_parent().get_tree().change_scene_to_file("res://scenes/Win.tscn")
 	pass
 
 func _updateState():

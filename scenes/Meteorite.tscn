@@ -51,4 +51,5 @@ position = Vector2(986, 421)
 [node name="ProgressBar" parent="." instance=ExtResource("4_xj21c")]
 
 [node name="TimerToEnd" parent="." instance=ExtResource("8_ib4tx")]
-position = Vector2(1065, 974)
+position = Vector2(832, 982)
+_fillMax = 300

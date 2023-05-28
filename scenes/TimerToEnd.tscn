@@ -23,7 +23,7 @@ theme_override_font_sizes/bold_font_size = 100
 theme_override_font_sizes/italics_font_size = 100
 theme_override_font_sizes/bold_italics_font_size = 100
 theme_override_font_sizes/mono_font_size = 100
-text = "IL RESTE X SECONDES"
+text = "XX:XX"
 fit_content = true
 
 [node name="Timer" type="Timer" parent="."]
