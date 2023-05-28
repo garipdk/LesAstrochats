@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmke46xnsixf0"]
+[gd_scene load_steps=9 format=3 uid="uid://bmke46xnsixf0"]
 
 [ext_resource type="Texture2D" uid="uid://rq0cfi5mhsvk" path="res://assets/IMG_0217.PNG" id="1_gmydq"]
 [ext_resource type="PackedScene" uid="uid://dnpeytuex6vpq" path="res://scenes/Chat.tscn" id="1_vqfb0"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ciyj5b2o2w7qr" path="res://scenes/SleepZone.tscn" id="3_ly1jv"]
 [ext_resource type="PackedScene" uid="uid://bg353mxlcht2v" path="res://scenes/RocketFillMeter.tscn" id="4_xj21c"]
 [ext_resource type="PackedScene" uid="uid://olb6kfb8gtkc" path="res://scenes/rocket.tscn" id="5_yi6e4"]
-[ext_resource type="Script" path="res://scripts/TimerToEnd.gd" id="7_ry4wa"]
 [ext_resource type="PackedScene" uid="uid://b1xu2eooeqfx7" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
 
 [node name="Node2D" type="Node2D"]
@@ -50,8 +49,6 @@ z_index = 100
 position = Vector2(986, 421)
 
 [node name="ProgressBar" parent="." instance=ExtResource("4_xj21c")]
-script = ExtResource("7_ry4wa")
-_fillMax = 60
 
 [node name="TimerToEnd" parent="." instance=ExtResource("8_ib4tx")]
 position = Vector2(1065, 974)
