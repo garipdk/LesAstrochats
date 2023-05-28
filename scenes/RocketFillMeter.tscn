@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/RocketFillMeter.gd" id="1_s722l"]
 
-[node name="ProgressBar" type="Node"]
+[node name="ProgressBar" type="Node2D"]
+position = Vector2(0, 2)
 script = ExtResource("1_s722l")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -29,5 +30,3 @@ text = "999/999"
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
 autostart = true
-
-[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]

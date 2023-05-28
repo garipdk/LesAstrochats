@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bl0b2h74s514u" path="res://scenes/mineral_spawner.tscn" id="3_dqtu1"]
 [ext_resource type="PackedScene" uid="uid://ciyj5b2o2w7qr" path="res://scenes/SleepZone.tscn" id="3_ly1jv"]
 [ext_resource type="PackedScene" uid="uid://bg353mxlcht2v" path="res://scenes/RocketFillMeter.tscn" id="4_xj21c"]
+[ext_resource type="PackedScene" uid="uid://coovf7h24lafi" path="res://scenes/rocket.tscn" id="5_yi6e4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,6 +15,12 @@ texture = ExtResource("1_gmydq")
 centered = false
 
 [node name="MineralSpawner" parent="." instance=ExtResource("3_dqtu1")]
+position = Vector2(1, 0)
+initHealthSmall = 1
+initHealthBig = 50
+
+[node name="Rocket" parent="." instance=ExtResource("5_yi6e4")]
+position = Vector2(569, 282)
 
 [node name="Chat1" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 position = Vector2(901, 168)
