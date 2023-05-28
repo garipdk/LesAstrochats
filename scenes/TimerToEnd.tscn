@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1xu2eooeqfx7"]
+[gd_scene load_steps=2 format=3 uid="uid://grjcajqidqlp"]
 
 [ext_resource type="Script" path="res://scripts/TimerToEnd.gd" id="1_v1lpy"]
 
 [node name="TimerToEnd" type="Node2D"]
 position = Vector2(0, 2)
 script = ExtResource("1_v1lpy")
+_fillMax = 180
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = 8

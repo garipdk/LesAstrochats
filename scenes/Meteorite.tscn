@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dnpeytuex6vpq" path="res://scenes/Chat.tscn" id="1_vqfb0"]
 [ext_resource type="PackedScene" uid="uid://dmsu8ab71r074" path="res://scenes/playzone.tscn" id="2_gf1te"]
 [ext_resource type="PackedScene" uid="uid://bl0b2h74s514u" path="res://scenes/mineral_spawner.tscn" id="3_dqtu1"]
-[ext_resource type="PackedScene" uid="uid://ciyj5b2o2w7qr" path="res://scenes/SleepZone.tscn" id="3_ly1jv"]
+[ext_resource type="PackedScene" uid="uid://d0t4bvwv0dddx" path="res://scenes/SleepZone.tscn" id="3_ly1jv"]
 [ext_resource type="PackedScene" uid="uid://bg353mxlcht2v" path="res://scenes/RocketFillMeter.tscn" id="4_xj21c"]
 [ext_resource type="PackedScene" uid="uid://olb6kfb8gtkc" path="res://scenes/rocket.tscn" id="5_yi6e4"]
-[ext_resource type="PackedScene" uid="uid://b1xu2eooeqfx7" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
+[ext_resource type="PackedScene" uid="uid://grjcajqidqlp" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,14 +23,16 @@ centered = false
 position = Vector2(1, 0)
 
 [node name="Rocket" parent="." instance=ExtResource("5_yi6e4")]
-position = Vector2(707, 389)
+position = Vector2(887, 119)
 
 [node name="SleepZone" parent="." groups=["SleepZone"] instance=ExtResource("3_ly1jv")]
-position = Vector2(707, 385)
+position = Vector2(704, 376)
 
 [node name="Chat1" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 z_index = 100
 position = Vector2(875, 400)
+atack_points = 5.0
+recuperation_per_second = 10.0
 
 [node name="Chat2" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 z_index = 100
@@ -41,15 +43,18 @@ z_index = 100
 position = Vector2(925, 422)
 
 [node name="Chat4" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
+visible = false
 z_index = 100
 position = Vector2(806, 385)
 
 [node name="Chat5" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
+visible = false
 z_index = 100
 position = Vector2(986, 421)
 
 [node name="ProgressBar" parent="." instance=ExtResource("4_xj21c")]
+position = Vector2(466, 61)
+scale = Vector2(1.687, 1.687)
 
 [node name="TimerToEnd" parent="." instance=ExtResource("8_ib4tx")]
 position = Vector2(832, 982)
-_fillMax = 300

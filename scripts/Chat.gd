@@ -13,6 +13,7 @@ enum STATES {
 }
 var etat: STATES = STATES.IDLE
 
+var bed_pos:Vector2
 var pick_up_pos:Vector2
 var can_grab = false
 var can_be_dropped = true
@@ -91,13 +92,16 @@ func _on_timer_timeout():
 		STATES.MINE:
 			if $Energy.value > 0.:
 				current_mineral.giveDamage(atack_points)
-			$Energy.value -= 1.
+			$Energy.value -= .1
 		STATES.SLEEP:
+			if bed_pos != null:
+				position = bed_pos
 			$Energy.value += recuperation_per_second
 
 
 func on_sleepzone_entered(body):
 	if body.is_in_group("SleepZone") and not Global.chat_sleeping:
+		bed_pos = body.position;
 		is_sleeping = true
 		Global.chat_sleeping = true
 	pass # Replace with function body.
