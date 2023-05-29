@@ -10,9 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://coovf7h24lafi" path="res://scenes/rocket.tscn" id="5_yi6e4"]
 [ext_resource type="PackedScene" uid="uid://grjcajqidqlp" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Meteorite" type="Node2D"]
 script = ExtResource("1_4cku0")
-scoreToWin = 5
 
 [node name="Img0217" type="Sprite2D" parent="."]
 position = Vector2(-73, -34)
@@ -61,4 +60,5 @@ scale = Vector2(1.687, 1.687)
 
 [node name="TimerToEnd" parent="." instance=ExtResource("8_ib4tx")]
 position = Vector2(832, 982)
-_fillMax = 5
+
+[connection signal="ready" from="TimerToEnd" to="." method="_on_timer_to_end_ready"]
