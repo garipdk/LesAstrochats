@@ -25,10 +25,11 @@ centered = false
 position = Vector2(1, 0)
 
 [node name="Rocket" parent="." instance=ExtResource("5_yi6e4")]
-position = Vector2(791, 320)
+position = Vector2(856, 807)
+scale = Vector2(2, 2)
 
 [node name="SleepZone" parent="." groups=["SleepZone"] instance=ExtResource("3_ly1jv")]
-position = Vector2(704, 376)
+position = Vector2(1526, 414)
 
 [node name="Chat1" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 z_index = 100
@@ -55,10 +56,11 @@ z_index = 100
 position = Vector2(986, 421)
 
 [node name="ProgressBar" parent="." instance=ExtResource("4_xj21c")]
-position = Vector2(466, 61)
+position = Vector2(1795, 968)
+rotation = -1.5708
 scale = Vector2(1.687, 1.687)
 
 [node name="TimerToEnd" parent="." instance=ExtResource("8_ib4tx")]
-position = Vector2(832, 982)
+position = Vector2(1508, 982)
 
 [connection signal="ready" from="TimerToEnd" to="." method="_on_timer_to_end_ready"]

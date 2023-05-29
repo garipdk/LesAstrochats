@@ -4,14 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://drdh3ifj1ctum" path="res://assets/Bed.png" id="2_h8n6i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_17cgk"]
-radius = 51.0
-height = 216.0
+radius = 60.0
+height = 160.0
 
 [node name="SleepZone" type="Area2D"]
 scale = Vector2(0.505, 0.505)
 script = ExtResource("1_3r8fq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.9604, 19.802)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_17cgk")
 
 [node name="Bed" type="Sprite2D" parent="."]

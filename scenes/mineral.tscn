@@ -14,7 +14,7 @@ height = 70.0
 radius = 30.0
 height = 100.0
 
-[node name="Mineral" type="Area2D"]
+[node name="Mineral2" type="Area2D"]
 script = ExtResource("1_jb1x4")
 
 [node name="CollisionSmall" type="CollisionShape2D" parent="."]
@@ -49,10 +49,5 @@ texture = ExtResource("3_yc8b5")
 position = Vector2(1, 0)
 texture = ExtResource("5_5edvq")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

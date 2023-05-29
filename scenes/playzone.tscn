@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmsu8ab71r074"]
+[gd_scene load_steps=3 format=3 uid="uid://dmsu8ab71r074"]
 
 [ext_resource type="Script" path="res://scripts/Playzone.gd" id="1_mgq78"]
+[ext_resource type="Texture2D" uid="uid://rq0cfi5mhsvk" path="res://assets/IMG_0217.PNG" id="2_fqltf"]
 
 [node name="Playzone" type="Area2D" groups=["Playzone"]]
 script = ExtResource("1_mgq78")
+
+[node name="Img0217" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-73, -34)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("2_fqltf")
+centered = false
 
 [node name="PlayzoneArea" type="CollisionPolygon2D" parent="." groups=["Playzone"]]
 position = Vector2(249.813, 199.438)
