@@ -13,7 +13,7 @@ var _reward = 1
 func _ready():
 	var random = RandomNumberGenerator.new()
 	random.randomize()
-	#$Timer.wait_time = 5 + randi() % 5
+	$Timer.wait_time = 5 + randi() % 5
 	add_to_group("Minerals")
 	pass # Replace with function boy.
 	

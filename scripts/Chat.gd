@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var energy: float = 4.
 @export var atack_points: float = 10.
 @export var recuperation_per_second:float = 0.5
+
 enum STATES {
 	IDLE,
 	SLEEP,
@@ -52,10 +53,17 @@ func _process(_delta):
 			etat = STATES.SLEEP
 		else:
 			etat = STATES.IDLE
-		if Global.chat_draged == self:			
-			if is_draged == true && can_be_dropped == false:
-				position = pick_up_pos
-				can_be_dropped = true
+		if Global.chat_draged == self:	
+					
+			if is_draged == true:
+				if can_be_dropped == false:
+					position = pick_up_pos
+					can_be_dropped = true
+				else:
+					if current_mineral != null:
+						position = current_mineral.position
+					elif is_sleeping:
+						position = bed_pos
 			Global.chat_draged = null
 		is_draged = false
 	
@@ -90,9 +98,14 @@ func _on_timer_timeout():
 		STATES.TIRED:
 			pass
 		STATES.MINE:
-			if $Energy.value > 0.:
-				current_mineral.giveDamage(atack_points)
-			$Energy.value -= .5
+			position = current_mineral.position
+			
+			if current_mineral != null:
+				current_mineral._isBeingMined = true
+			
+				if $Energy.value > 0.:
+					current_mineral.giveDamage(atack_points)
+				$Energy.value -= .5
 		STATES.SLEEP:
 			if bed_pos != null:
 				position = bed_pos
