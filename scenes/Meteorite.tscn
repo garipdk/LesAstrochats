@@ -86,8 +86,8 @@ scale = Vector2(0.963, 0.963)
 texture = ExtResource("10_lagtn")
 
 [connection signal="ready" from="Chat1/ChatAnim" to="Chat1" method="_on_chat_anim_ready"]
-[connection signal="ready" from="Chat2/ChatAnim" to="Chat1" method="_on_chat_anim_ready"]
-[connection signal="ready" from="Chat3/ChatAnim" to="Chat1" method="_on_chat_anim_ready"]
-[connection signal="ready" from="Chat4/ChatAnim" to="Chat1" method="_on_chat_anim_ready"]
-[connection signal="ready" from="Chat5/ChatAnim" to="Chat1" method="_on_chat_anim_ready"]
+[connection signal="ready" from="Chat2/ChatAnim" to="Chat2" method="_on_chat_anim_ready"]
+[connection signal="ready" from="Chat3/ChatAnim" to="Chat3" method="_on_chat_anim_ready"]
+[connection signal="ready" from="Chat4/ChatAnim" to="Chat4" method="_on_chat_anim_ready"]
+[connection signal="ready" from="Chat5/ChatAnim" to="Chat5" method="_on_chat_anim_ready"]
 [connection signal="ready" from="TimerToEnd" to="." method="_on_timer_to_end_ready"]
