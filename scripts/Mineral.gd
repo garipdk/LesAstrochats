@@ -4,14 +4,22 @@ extends Node2D
 var initHealth = 100.0;
 
 var _isSmall:bool = false
+var _isBeingMined = false;
 
 @export var health:float = 100.0
 var _reward = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	#$Timer.wait_time = 5 + randi() % 5
 	add_to_group("Minerals")
 	pass # Replace with function boy.
+	
+func _startMining():
+	_isBeingMined = true
+	pass
 	
 func initMineral(isSmall:bool, instanceInitHealth:float, reward: int):
 	_isSmall = isSmall
@@ -67,3 +75,9 @@ func _on_body_exited(body):
 		pass	
 	pass # Replace with function body.
 	
+
+
+func _on_timer_timeout():
+	if not _isBeingMined:
+		queue_free()
+	pass # Replace with function body.
