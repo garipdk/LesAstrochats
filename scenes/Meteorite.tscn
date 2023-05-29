@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmke46xnsixf0"]
+[gd_scene load_steps=14 format=3 uid="uid://bmke46xnsixf0"]
 
 [ext_resource type="Script" path="res://scripts/Meteorite.gd" id="1_4cku0"]
 [ext_resource type="Texture2D" uid="uid://rq0cfi5mhsvk" path="res://assets/IMG_0217.PNG" id="1_gmydq"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://grjcajqidqlp" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
 [ext_resource type="PackedScene" uid="uid://bnylfqfhxl2ec" path="res://scenes/ChatAnimGrand.tscn" id="9_erq4n"]
 [ext_resource type="Texture2D" uid="uid://dcsf3xfbjk121" path="res://assets/UI_fusee.png" id="10_lagtn"]
+[ext_resource type="AudioStream" uid="uid://cro11ep5b33s0" path="res://assets/Audio/MFYM_-_08_Sweet_Magic.mp3" id="12_nvq4b"]
 
 [node name="Meteorite" type="Node2D"]
 script = ExtResource("1_4cku0")
@@ -85,6 +86,11 @@ position = Vector2(1351, 957)
 position = Vector2(1648, 946)
 scale = Vector2(0.963, 0.963)
 texture = ExtResource("10_lagtn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_nvq4b")
+volume_db = -8.019
+autoplay = true
 
 [connection signal="ready" from="Chat1/ChatAnim" to="Chat1" method="_on_chat_anim_ready"]
 [connection signal="ready" from="Chat2/ChatAnim" to="Chat2" method="_on_chat_anim_ready"]

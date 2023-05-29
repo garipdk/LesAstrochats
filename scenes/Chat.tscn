@@ -42,6 +42,7 @@ stream = ExtResource("5_6r5vi")
 
 [node name="Tired" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_51yjy")
+volume_db = -6.988
 
 [connection signal="ready" from="Energy" to="." method="_on_energy_ready"]
 [connection signal="ready" from="Timer" to="." method="_on_timer_ready"]
