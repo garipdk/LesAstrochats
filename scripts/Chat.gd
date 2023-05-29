@@ -22,6 +22,8 @@ var grabbed_offset = Vector2()
 var is_draged = false
 var is_sleeping = false
 var current_mineral = null
+var chatanime_ready = false
+
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if Global.chat_draged == null:
@@ -67,6 +69,21 @@ func _process(_delta):
 			Global.chat_draged = null
 		is_draged = false
 	
+	match etat:
+		STATES.IDLE:
+			if chatanime_ready:
+				if $ChatAnim.animtreeready:
+					$ChatAnim/AnimationTree["parameters/playback"].travel("IDLE")
+					$ChatAnim.show_anim("IDLE")
+			pass
+		STATES.DRAG:
+			pass
+		STATES.TIRED:
+			pass
+		STATES.MINE:
+			pass
+		STATES.SLEEP:
+			pass
 	# move_and_slide()
 	
 func on_entered_playzone():
@@ -128,3 +145,8 @@ func on_sleepzone_exited(body):
 func _on_energy_ready():
 	$Energy.max_value = energy
 	$Energy.value = energy
+
+
+func _on_chat_anim_ready():
+	chatanime_ready = true
+	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmke46xnsixf0"]
+[gd_scene load_steps=11 format=3 uid="uid://bmke46xnsixf0"]
 
 [ext_resource type="Script" path="res://scripts/Meteorite.gd" id="1_4cku0"]
 [ext_resource type="Texture2D" uid="uid://rq0cfi5mhsvk" path="res://assets/IMG_0217.PNG" id="1_gmydq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0t4bvwv0dddx" path="res://scenes/SleepZone.tscn" id="3_ly1jv"]
 [ext_resource type="PackedScene" uid="uid://bg353mxlcht2v" path="res://scenes/RocketFillMeter.tscn" id="4_xj21c"]
 [ext_resource type="PackedScene" uid="uid://coovf7h24lafi" path="res://scenes/rocket.tscn" id="5_yi6e4"]
+[ext_resource type="PackedScene" uid="uid://jpcg1yn64s72" path="res://scenes/ChatAnim1.tscn" id="8_coek3"]
 [ext_resource type="PackedScene" uid="uid://grjcajqidqlp" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
 
 [node name="Meteorite" type="Node2D"]
@@ -37,6 +38,10 @@ position = Vector2(875, 400)
 atack_points = 5.0
 recuperation_per_second = 2.0
 
+[node name="ChatAnim" parent="Chat1" instance=ExtResource("8_coek3")]
+position = Vector2(-135, 20)
+scale = Vector2(2, 2)
+
 [node name="Chat2" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 z_index = 100
 position = Vector2(828, 450)
@@ -63,4 +68,5 @@ scale = Vector2(1.687, 1.687)
 [node name="TimerToEnd" parent="." instance=ExtResource("8_ib4tx")]
 position = Vector2(1508, 982)
 
+[connection signal="ready" from="Chat1/ChatAnim" to="Chat1" method="_on_chat_anim_ready"]
 [connection signal="ready" from="TimerToEnd" to="." method="_on_timer_to_end_ready"]
