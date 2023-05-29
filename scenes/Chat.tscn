@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnpeytuex6vpq"]
+[gd_scene load_steps=7 format=3 uid="uid://dnpeytuex6vpq"]
 
 [ext_resource type="Script" path="res://scripts/Chat.gd" id="1_22xco"]
-[ext_resource type="Texture2D" uid="uid://dtu7qgbtqccim" path="res://assets/Chat.png" id="2_d4y7m"]
 [ext_resource type="Texture2D" uid="uid://cukwgxc1getyu" path="res://assets/eclaire.png" id="3_jp1a1"]
+[ext_resource type="AudioStream" uid="uid://qa1th04kqkdo" path="res://assets/Audio/miningSmall.mp3" id="4_jsbvj"]
+[ext_resource type="AudioStream" uid="uid://b18abjnwfeyp1" path="res://assets/Audio/miningBig.mp3" id="5_6r5vi"]
+[ext_resource type="AudioStream" uid="uid://n24js2k4rnoj" path="res://assets/Audio/tired.mp3" id="6_51yjy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eg308"]
 radius = 30.0
@@ -26,15 +28,21 @@ offset_bottom = -109.0
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Chat" type="Sprite2D" parent="."]
-scale = Vector2(1.749, 1.749)
-texture = ExtResource("2_d4y7m")
-
 [node name="Lightning" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1, -48)
 scale = Vector2(0.043, 0.043)
 texture = ExtResource("3_jp1a1")
 
+[node name="MiningSmall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jsbvj")
+
+[node name="MiningBig" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6r5vi")
+
+[node name="Tired" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_51yjy")
+
 [connection signal="ready" from="Energy" to="." method="_on_energy_ready"]
+[connection signal="ready" from="Timer" to="." method="_on_timer_ready"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -34,7 +34,7 @@ func _spawnMineral():
 		
 			var random = RandomNumberGenerator.new()
 			random.randomize()
-			var isSmall:bool = randf() <= .5
+			var isSmall:bool = randf() <= .75
 			
 			
 			var newMineral = mineral.instantiate()

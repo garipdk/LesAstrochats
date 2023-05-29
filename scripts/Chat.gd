@@ -107,14 +107,32 @@ func on_exited_mineral(_body):
 	current_mineral = null
 	
 func _on_timer_timeout():
+			
 	match etat:
 		STATES.IDLE:
+			$MiningSmall.playing = false
+			$MiningBig.playing = false
+			$Tired.playing = false
 			pass
 		STATES.DRAG:
+			$MiningSmall.playing = false
+			$MiningBig.playing = false
+			$Tired.playing = false
 			pass
 		STATES.TIRED:
+			$MiningSmall.playing = false
+			$MiningBig.playing = false
+			if not $Tired.playing:
+				$Tired.playing = true
 			pass
 		STATES.MINE:
+			$Tired.playing = false
+			if not $MiningSmall.playing:
+				if current_mineral._isSmall:
+					$MiningSmall.playing = true
+				else:
+					$MiningBig.playing = true
+			
 			position = current_mineral.position
 			
 			if current_mineral != null:
@@ -122,8 +140,9 @@ func _on_timer_timeout():
 			
 				if $Energy.value > 0.:
 					current_mineral.giveDamage(atack_points)
-				$Energy.value -= .5
+				$Energy.value -= .4
 		STATES.SLEEP:
+			$MiningSmall.playing = false
 			if bed_pos != null:
 				position = bed_pos
 			$Energy.value += recuperation_per_second
@@ -149,4 +168,9 @@ func _on_energy_ready():
 
 func _on_chat_anim_ready():
 	chatanime_ready = true
+	
+func _on_timer_ready():
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	$Timer.wait_time = 1.0 + randf() * .1
 	pass # Replace with function body.
