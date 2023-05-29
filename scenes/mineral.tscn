@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bo1pmwwdxcddq"]
+[gd_scene load_steps=7 format=3 uid="uid://bo1pmwwdxcddq"]
 
 [ext_resource type="Script" path="res://scripts/Mineral.gd" id="1_jb1x4"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="3_llma6"]
@@ -6,33 +6,27 @@
 [ext_resource type="Texture2D" uid="uid://d0qiwsr8d4av3" path="res://assets/healthBar.png" id="3_yc8b5"]
 [ext_resource type="Texture2D" uid="uid://d4iplhk8ho3rp" path="res://assets/smallMineral.png" id="5_5edvq"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xjoqy"]
-radius = 25.0
-height = 70.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_8t1st"]
+radius = 50.01
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p38lh"]
-radius = 30.0
-height = 100.0
-
-[node name="Mineral2" type="Area2D"]
+[node name="Mineral" type="Area2D"]
 script = ExtResource("1_jb1x4")
 
 [node name="CollisionSmall" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 10)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_xjoqy")
+position = Vector2(4, -27)
+shape = SubResource("CircleShape2D_8t1st")
 
 [node name="BigMineral" type="Sprite2D" parent="."]
-position = Vector2(6, -26)
+position = Vector2(3, -31)
+scale = Vector2(0.671, 0.671)
 texture = ExtResource("3_xugd4")
 
 [node name="CollisionBig" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_p38lh")
+position = Vector2(3, -28)
+shape = SubResource("CircleShape2D_8t1st")
 
 [node name="HealthBar" type="Node2D" parent="."]
-position = Vector2(0, -50)
+position = Vector2(0, -38)
 script = ExtResource("3_llma6")
 
 [node name="Anchor" type="Node2D" parent="HealthBar"]
@@ -46,12 +40,14 @@ position = Vector2(22, -58)
 texture = ExtResource("3_yc8b5")
 
 [node name="SmallMineral" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(-1, -27)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_5edvq")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="ready" from="Timer" to="." method="_on_timer_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

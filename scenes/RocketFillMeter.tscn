@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg353mxlcht2v"]
+[gd_scene load_steps=6 format=3 uid="uid://bg353mxlcht2v"]
 
 [ext_resource type="Script" path="res://scripts/RocketFillMeter.gd" id="1_s722l"]
 
@@ -19,6 +19,29 @@ cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 [sub_resource type="Theme" id="Theme_li246"]
 default_font = SubResource("FontFile_jyo2c")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4f24l"]
+bg_color = Color(0.941176, 0.941176, 0.941176, 0.392157)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngokm"]
+bg_color = Color(0.839216, 0.447059, 0.666667, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="ProgressBar" type="Node2D"]
 position = Vector2(0, 2)
 script = ExtResource("1_s722l")
@@ -27,6 +50,9 @@ script = ExtResource("1_s722l")
 offset_right = 555.0
 offset_bottom = 68.0
 theme = SubResource("Theme_li246")
+theme_override_font_sizes/font_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_4f24l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ngokm")
 show_percentage = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ProgressBar"]
@@ -36,15 +62,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1.5
-offset_top = -30.0
-offset_right = 98.5
-offset_bottom = 1.0
+offset_left = 15.5
+offset_top = -34.0
+offset_right = 112.5
+offset_bottom = -2.99999
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5708
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.968627, 0.968627, 0.968627, 1)
+theme_override_colors/font_outline_color = Color(0.12549, 0.109804, 0.145098, 1)
+theme_override_constants/outline_size = 11
+bbcode_enabled = true
 text = "999/999"
 
 [node name="Timer" type="Timer" parent="ProgressBar"]

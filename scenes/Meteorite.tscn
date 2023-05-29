@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmke46xnsixf0"]
+[gd_scene load_steps=11 format=3 uid="uid://bmke46xnsixf0"]
 
 [ext_resource type="Script" path="res://scripts/Meteorite.gd" id="1_4cku0"]
 [ext_resource type="Texture2D" uid="uid://rq0cfi5mhsvk" path="res://assets/IMG_0217.PNG" id="1_gmydq"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bg353mxlcht2v" path="res://scenes/RocketFillMeter.tscn" id="4_xj21c"]
 [ext_resource type="PackedScene" uid="uid://coovf7h24lafi" path="res://scenes/rocket.tscn" id="5_yi6e4"]
 [ext_resource type="PackedScene" uid="uid://grjcajqidqlp" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
+[ext_resource type="Texture2D" uid="uid://dcsf3xfbjk121" path="res://assets/UI_fusee.png" id="10_lagtn"]
 
 [node name="Meteorite" type="Node2D"]
 script = ExtResource("1_4cku0")
@@ -20,47 +21,52 @@ texture = ExtResource("1_gmydq")
 centered = false
 
 [node name="Playzone" parent="." instance=ExtResource("2_gf1te")]
+position = Vector2(-200, 0)
 
 [node name="MineralSpawner" parent="." instance=ExtResource("3_dqtu1")]
-position = Vector2(1, 0)
 
 [node name="Rocket" parent="." instance=ExtResource("5_yi6e4")]
-position = Vector2(856, 807)
+position = Vector2(675, 773)
 scale = Vector2(2, 2)
 
 [node name="SleepZone" parent="." groups=["SleepZone"] instance=ExtResource("3_ly1jv")]
-position = Vector2(1526, 412)
+position = Vector2(1293, 407)
 
 [node name="Chat1" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 z_index = 100
-position = Vector2(875, 400)
+position = Vector2(849, 834)
 atack_points = 5.0
 recuperation_per_second = 2.0
 
 [node name="Chat2" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 z_index = 100
-position = Vector2(828, 450)
+position = Vector2(661, 893)
 
 [node name="Chat3" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 z_index = 100
-position = Vector2(925, 422)
+position = Vector2(568, 849)
 
 [node name="Chat4" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 visible = false
 z_index = 100
-position = Vector2(806, 385)
+position = Vector2(129, 470)
 
 [node name="Chat5" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 visible = false
 z_index = 100
-position = Vector2(986, 421)
+position = Vector2(148, 397)
 
 [node name="ProgressBar" parent="." instance=ExtResource("4_xj21c")]
-position = Vector2(1795, 968)
+position = Vector2(1652, 972)
 rotation = -1.5708
 scale = Vector2(1.687, 1.687)
 
 [node name="TimerToEnd" parent="." instance=ExtResource("8_ib4tx")]
-position = Vector2(1508, 982)
+position = Vector2(1351, 957)
+
+[node name="UiFusee" type="Sprite2D" parent="."]
+position = Vector2(1648, 946)
+scale = Vector2(0.963, 0.963)
+texture = ExtResource("10_lagtn")
 
 [connection signal="ready" from="TimerToEnd" to="." method="_on_timer_to_end_ready"]
