@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmke46xnsixf0"]
+[gd_scene load_steps=13 format=3 uid="uid://bmke46xnsixf0"]
 
 [ext_resource type="Script" path="res://scripts/Meteorite.gd" id="1_4cku0"]
 [ext_resource type="Texture2D" uid="uid://rq0cfi5mhsvk" path="res://assets/IMG_0217.PNG" id="1_gmydq"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://d0t4bvwv0dddx" path="res://scenes/SleepZone.tscn" id="3_ly1jv"]
 [ext_resource type="PackedScene" uid="uid://bg353mxlcht2v" path="res://scenes/RocketFillMeter.tscn" id="4_xj21c"]
 [ext_resource type="PackedScene" uid="uid://coovf7h24lafi" path="res://scenes/rocket.tscn" id="5_yi6e4"]
-[ext_resource type="PackedScene" uid="uid://jpcg1yn64s72" path="res://scenes/ChatAnim1.tscn" id="8_coek3"]
+[ext_resource type="PackedScene" uid="uid://jpcg1yn64s72" path="res://scenes/ChatAnimPetit.tscn" id="8_coek3"]
 [ext_resource type="PackedScene" uid="uid://grjcajqidqlp" path="res://scenes/TimerToEnd.tscn" id="8_ib4tx"]
+[ext_resource type="PackedScene" uid="uid://bnylfqfhxl2ec" path="res://scenes/ChatAnimGrand.tscn" id="9_erq4n"]
 [ext_resource type="Texture2D" uid="uid://dcsf3xfbjk121" path="res://assets/UI_fusee.png" id="10_lagtn"]
 
 [node name="Meteorite" type="Node2D"]
@@ -46,14 +47,14 @@ scale = Vector2(2, 2)
 z_index = 100
 position = Vector2(661, 893)
 
-[node name="ChatAnim" parent="Chat2" instance=ExtResource("8_coek3")]
+[node name="ChatAnim" parent="Chat2" instance=ExtResource("9_erq4n")]
 scale = Vector2(2, 2)
 
 [node name="Chat3" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]
 z_index = 100
 position = Vector2(568, 849)
 
-[node name="ChatAnim" parent="Chat3" instance=ExtResource("8_coek3")]
+[node name="ChatAnim" parent="Chat3" instance=ExtResource("9_erq4n")]
 scale = Vector2(2, 2)
 
 [node name="Chat4" parent="." groups=["Chats"] instance=ExtResource("1_vqfb0")]

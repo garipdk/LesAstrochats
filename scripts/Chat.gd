@@ -23,6 +23,7 @@ var is_draged = false
 var is_sleeping = false
 var current_mineral = null
 var chatanime_ready = false
+var energy_ready = false
 
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
@@ -73,16 +74,35 @@ func _process(_delta):
 		STATES.IDLE:
 			if chatanime_ready:
 				if $ChatAnim.animtreeready:
-					$ChatAnim/AnimationTree["parameters/playback"].travel("IDLE")
-					$ChatAnim.show_anim("IDLE")
+					if energy_ready and $Energy.value <= 0.:
+						$ChatAnim/AnimationTree["parameters/playback"].travel("TIRED")
+						$ChatAnim.show_anim("TIRED")
+					else:
+						$ChatAnim/AnimationTree["parameters/playback"].travel("IDLE")
+						$ChatAnim.show_anim("IDLE")
 			pass
 		STATES.DRAG:
+			if chatanime_ready:
+				if $ChatAnim.animtreeready:
+					$ChatAnim/AnimationTree["parameters/playback"].travel("DRAG")
+					$ChatAnim.show_anim("DRAG")
 			pass
 		STATES.TIRED:
-			pass
+			if chatanime_ready:
+				if $ChatAnim.animtreeready:
+					$ChatAnim/AnimationTree["parameters/playback"].travel("TIRED")
+					$ChatAnim.show_anim("TIRED")
 		STATES.MINE:
+			if chatanime_ready:
+				if $ChatAnim.animtreeready:
+					$ChatAnim/AnimationTree["parameters/playback"].travel("MINE")
+					$ChatAnim.show_anim("MINE")
 			pass
 		STATES.SLEEP:
+			if chatanime_ready:
+				if $ChatAnim.animtreeready:
+					$ChatAnim/AnimationTree["parameters/playback"].travel("SLEEP")
+					$ChatAnim.show_anim("SLEEP")
 			pass
 	# move_and_slide()
 	
@@ -161,7 +181,9 @@ func on_sleepzone_exited(body):
 		is_sleeping = false
 		Global.chat_sleeping = false
 	
+
 func _on_energy_ready():
+	energy_ready = true
 	$Energy.max_value = energy
 	$Energy.value = energy
 

@@ -14,10 +14,14 @@ func _process(delta):
 func _on_animation_tree_ready():
 	animtreeready = true
 	pass # Replace with function body.
-func show_anim(name):
+func show_anim(name0):
 	for c in get_children():
 		if c.is_in_group("Sprites"):
-			if name != c.name:
+			if name0 != c.name:
 				c.visible = false
 			else:
 				c.visible = true
+				if name0 == "SLEEP":
+					c.rotation = 90
+				else:
+					c.rotation = 0
