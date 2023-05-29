@@ -49,5 +49,9 @@ texture = ExtResource("3_yc8b5")
 position = Vector2(1, 0)
 texture = ExtResource("5_5edvq")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="ready" from="Timer" to="." method="_on_timer_ready"]

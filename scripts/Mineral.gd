@@ -11,9 +11,6 @@ var _reward = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var random = RandomNumberGenerator.new()
-	random.randomize()
-	$Timer.wait_time = 5 + randi() % 5
 	add_to_group("Minerals")
 	pass # Replace with function boy.
 	
@@ -80,4 +77,11 @@ func _on_body_exited(body):
 func _on_timer_timeout():
 	if not _isBeingMined:
 		queue_free()
+	pass # Replace with function body.
+
+
+func _on_timer_ready():
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	$Timer.wait_time = 5 + randi() % 5
 	pass # Replace with function body.
