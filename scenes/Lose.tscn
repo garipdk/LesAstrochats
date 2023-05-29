@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctnc1ukt0dr35"]
+[gd_scene load_steps=8 format=3 uid="uid://ctnc1ukt0dr35"]
 
 [ext_resource type="Script" path="res://scripts/GoBackToMenu.gd" id="1_l58sm"]
-[ext_resource type="Texture2D" uid="uid://b4oip5povua3f" path="res://assets/background_flou.png" id="2_vswlt"]
-[ext_resource type="Texture2D" uid="uid://cn1nwjffngscr" path="res://assets/Loose.jpeg" id="3_l0bgw"]
+[ext_resource type="Texture2D" uid="uid://dfh7um4voo8xv" path="res://assets/background.png" id="2_rh6sh"]
 [ext_resource type="Texture2D" uid="uid://copyo5mqkk2ic" path="res://assets/Boutons/bouton_menu.png" id="4_0dylm"]
+[ext_resource type="Texture2D" uid="uid://cyi2rwnjh3lp2" path="res://assets/GAME_OVER.png" id="5_hwwj8"]
+[ext_resource type="Texture2D" uid="uid://cvm2m0uoecutk" path="res://assets/UI_game_over.png" id="5_knxxg"]
 [ext_resource type="Texture2D" uid="uid://6apyuxr553yd" path="res://assets/Boutons/bouton_menu_light.png" id="5_usse4"]
+[ext_resource type="AudioStream" uid="uid://cu3ec1i5vbnqo" path="res://assets/Audio/Game-Over.mp3" id="7_ah1ut"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_l58sm")
@@ -12,45 +14,33 @@ script = ExtResource("1_l58sm")
 [node name="Img0217" type="Sprite2D" parent="."]
 position = Vector2(-73, -34)
 scale = Vector2(0.85, 0.85)
-texture = ExtResource("2_vswlt")
+texture = ExtResource("2_rh6sh")
 centered = false
 
-[node name="Lose" type="Sprite2D" parent="."]
-position = Vector2(1021, 603)
-scale = Vector2(2, 2)
-texture = ExtResource("3_l0bgw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 721.0
-offset_top = 204.0
-offset_right = 1808.0
-offset_bottom = 341.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 80
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 100
-text = "YOU LOSE !!! :("
-fit_content = true
-
 [node name="Button" type="TextureButton" parent="."]
-offset_left = 1053.0
-offset_top = 442.0
-offset_right = 1565.0
-offset_bottom = 954.0
+offset_left = 594.0
+offset_top = 832.0
+offset_right = 1298.0
+offset_bottom = 1122.0
 texture_normal = ExtResource("4_0dylm")
 texture_pressed = ExtResource("5_usse4")
 texture_hover = ExtResource("5_usse4")
 texture_disabled = ExtResource("4_0dylm")
 texture_focused = ExtResource("5_usse4")
+
+[node name="GameOver" type="Sprite2D" parent="."]
+position = Vector2(1006.5, 471.5)
+scale = Vector2(1.21973, 1.21973)
+texture = ExtResource("5_hwwj8")
+
+[node name="UiGameOver" type="Sprite2D" parent="."]
+position = Vector2(1403, 126)
+scale = Vector2(0.848624, 0.848624)
+texture = ExtResource("5_knxxg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ah1ut")
+volume_db = -6.166
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

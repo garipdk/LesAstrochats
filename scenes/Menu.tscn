@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi27bwbp6lm3x"]
+[gd_scene load_steps=11 format=3 uid="uid://bi27bwbp6lm3x"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_svq0h"]
-[ext_resource type="Texture2D" uid="uid://b4oip5povua3f" path="res://assets/background_flou.png" id="2_jfutn"]
+[ext_resource type="Texture2D" uid="uid://dfh7um4voo8xv" path="res://assets/background.png" id="2_pbal1"]
 [ext_resource type="Texture2D" uid="uid://cl36ubhfvji15" path="res://assets/Boutons/bouton_jouer.png" id="3_eopnd"]
 [ext_resource type="Texture2D" uid="uid://b00p03a34nk1" path="res://assets/Boutons/bouton_jouer_light.png" id="4_8udxg"]
 [ext_resource type="Texture2D" uid="uid://clvv5ffmtql6v" path="res://assets/Boutons/bouton_credits.png" id="5_e5pd7"]
 [ext_resource type="Texture2D" uid="uid://dkjh7motdx3eh" path="res://assets/Boutons/bouton_credits_light.png" id="6_f5m37"]
 [ext_resource type="Texture2D" uid="uid://cbhyn05o7l6ky" path="res://assets/Boutons/bouton_quitter.png" id="7_ppawh"]
 [ext_resource type="Texture2D" uid="uid://dpg05m0uwxeyk" path="res://assets/Boutons/bouton_quitter_light.png" id="8_n0ad6"]
+[ext_resource type="Texture2D" uid="uid://xm2hcmcmuh4y" path="res://assets/logo_astrochats.png" id="9_ogwev"]
+[ext_resource type="AudioStream" uid="uid://bffsx0d6mki6k" path="res://assets/Audio/Menu.mp3" id="10_2a3je"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_svq0h")
@@ -15,36 +17,15 @@ script = ExtResource("1_svq0h")
 [node name="Img0217" type="Sprite2D" parent="."]
 position = Vector2(-73, -34)
 scale = Vector2(0.85, 0.85)
-texture = ExtResource("2_jfutn")
+texture = ExtResource("2_pbal1")
 centered = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 567.0
-offset_top = 260.0
-offset_right = 1654.0
-offset_bottom = 425.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 120
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 100
-text = "Les Astrochats"
-fit_content = true
-
 [node name="Play" type="TextureButton" parent="."]
-offset_left = 759.0
-offset_top = 409.0
-offset_right = 1271.0
-offset_bottom = 921.0
+offset_left = 698.0
+offset_top = 540.0
+offset_right = 1402.0
+offset_bottom = 807.0
+scale = Vector2(0.754, 0.754)
 texture_normal = ExtResource("3_eopnd")
 texture_pressed = ExtResource("4_8udxg")
 texture_hover = ExtResource("4_8udxg")
@@ -52,10 +33,11 @@ texture_disabled = ExtResource("3_eopnd")
 texture_focused = ExtResource("4_8udxg")
 
 [node name="Credit" type="TextureButton" parent="."]
-offset_left = 66.0
-offset_top = 564.0
-offset_right = 578.0
-offset_bottom = 1076.0
+offset_left = 700.0
+offset_top = 699.0
+offset_right = 1404.0
+offset_bottom = 956.0
+scale = Vector2(0.745, 0.745)
 texture_normal = ExtResource("5_e5pd7")
 texture_pressed = ExtResource("6_f5m37")
 texture_hover = ExtResource("6_f5m37")
@@ -63,15 +45,26 @@ texture_disabled = ExtResource("5_e5pd7")
 texture_focused = ExtResource("6_f5m37")
 
 [node name="Quit" type="TextureButton" parent="."]
-offset_left = 1400.0
-offset_top = 552.0
-offset_right = 1912.0
-offset_bottom = 1064.0
+offset_left = 672.0
+offset_top = 871.0
+offset_right = 1530.0
+offset_bottom = 1128.0
+scale = Vector2(0.659, 0.659)
 texture_normal = ExtResource("7_ppawh")
 texture_pressed = ExtResource("8_n0ad6")
 texture_hover = ExtResource("8_n0ad6")
 texture_disabled = ExtResource("7_ppawh")
 texture_focused = ExtResource("8_n0ad6")
+
+[node name="LogoAstrochats" type="Sprite2D" parent="."]
+position = Vector2(978, 298)
+scale = Vector2(0.588, 0.588)
+texture = ExtResource("9_ogwev")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_2a3je")
+volume_db = -9.043
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Credit" to="." method="_on_credit_pressed"]

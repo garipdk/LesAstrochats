@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp4algmag4icr"]
+[gd_scene load_steps=5 format=3 uid="uid://k6n2uv3f4enw"]
 
 [ext_resource type="Script" path="res://scripts/Intro.gd" id="1_4fknh"]
 [ext_resource type="Texture2D" uid="uid://sawn83ofcmte" path="res://assets/introduction.png" id="2_7wk3r"]
@@ -9,16 +9,17 @@
 script = ExtResource("1_4fknh")
 
 [node name="Img0217" type="Sprite2D" parent="."]
-position = Vector2(-73, -34)
-scale = Vector2(0.85, 0.85)
+position = Vector2(6, -23)
+scale = Vector2(0.783, 0.771486)
 texture = ExtResource("2_7wk3r")
 centered = false
 
 [node name="Button" type="TextureButton" parent="."]
-offset_left = 706.0
-offset_top = 672.0
-offset_right = 1218.0
-offset_bottom = 1184.0
+offset_left = 1216.0
+offset_top = 865.0
+offset_right = 1920.0
+offset_bottom = 1122.0
+scale = Vector2(0.819, 0.819)
 texture_normal = ExtResource("3_n2ylt")
 texture_pressed = ExtResource("4_nciak")
 texture_hover = ExtResource("4_nciak")

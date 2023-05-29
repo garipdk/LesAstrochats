@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cigq5pmbgcyww"]
+[gd_scene load_steps=9 format=3 uid="uid://cigq5pmbgcyww"]
 
 [ext_resource type="Script" path="res://scripts/GoBackToMenu.gd" id="1_cx0x3"]
 [ext_resource type="Texture2D" uid="uid://b4oip5povua3f" path="res://assets/background_flou.png" id="2_ply1m"]
-[ext_resource type="Texture2D" uid="uid://bl65su3yl72ue" path="res://assets/win.jpeg" id="2_s57xr"]
+[ext_resource type="Texture2D" uid="uid://dfh7um4voo8xv" path="res://assets/background.png" id="3_yxydq"]
 [ext_resource type="Texture2D" uid="uid://copyo5mqkk2ic" path="res://assets/Boutons/bouton_menu.png" id="4_wxso8"]
 [ext_resource type="Texture2D" uid="uid://6apyuxr553yd" path="res://assets/Boutons/bouton_menu_light.png" id="5_mxmil"]
+[ext_resource type="Texture2D" uid="uid://b0hr65w563vln" path="res://assets/UI_winner.png" id="6_uu7nk"]
+[ext_resource type="Texture2D" uid="uid://c7c3jjlmh1euy" path="res://assets/WINNER.png" id="6_xsndg"]
+[ext_resource type="AudioStream" uid="uid://dl1drda7id075" path="res://assets/Audio/WinMusic.mp3" id="8_851fk"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_cx0x3")
@@ -17,39 +20,32 @@ centered = false
 
 [node name="Win" type="Sprite2D" parent="."]
 position = Vector2(981, 546)
-texture = ExtResource("2_s57xr")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 789.0
-offset_top = 118.0
-offset_right = 1876.0
-offset_bottom = 255.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 80
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 100
-text = "YOU WIN !!!"
-fit_content = true
+texture = ExtResource("3_yxydq")
 
 [node name="Button" type="TextureButton" parent="."]
-offset_left = 801.0
-offset_top = 444.0
-offset_right = 1313.0
-offset_bottom = 956.0
+offset_left = 1121.0
+offset_top = 834.0
+offset_right = 1825.0
+offset_bottom = 1346.0
 texture_normal = ExtResource("4_wxso8")
 texture_pressed = ExtResource("5_mxmil")
 texture_hover = ExtResource("5_mxmil")
 texture_disabled = ExtResource("4_wxso8")
 texture_focused = ExtResource("5_mxmil")
+
+[node name="Winner" type="Sprite2D" parent="."]
+position = Vector2(989, 473)
+scale = Vector2(1.19922, 1.19922)
+texture = ExtResource("6_xsndg")
+
+[node name="UiWinner" type="Sprite2D" parent="."]
+position = Vector2(518, 263)
+scale = Vector2(1.09598, 1.09598)
+texture = ExtResource("6_uu7nk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_851fk")
+volume_db = -5.755
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -86,10 +86,10 @@ text = "Developpeurs :
 fit_content = true
 
 [node name="Button" type="TextureButton" parent="."]
-offset_left = 686.0
-offset_top = 668.0
-offset_right = 1198.0
-offset_bottom = 1180.0
+offset_left = 625.0
+offset_top = 833.0
+offset_right = 1329.0
+offset_bottom = 1090.0
 texture_normal = ExtResource("3_bql72")
 texture_pressed = ExtResource("4_dbuoh")
 texture_hover = ExtResource("4_dbuoh")
